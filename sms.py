@@ -5,7 +5,7 @@ import sys, os
 import xmltodict
 import requests
 import json
-import emaile
+import sendEmail
 
 SMS_LIST_TEMPLATE = '''<request>
     <PageIndex>1</PageIndex>
@@ -138,7 +138,7 @@ if __name__ == "__main__":
         #email messages
         for i in range(len(messages)):
             print(messages[i])
-            emaile.sendmail('SMS ' + messagesR[i]['Date'], messages[i], 'email@email.com')    
+            sendEmail.sendmail('SMS ' + messagesR[i]['Date'], messages[i], 'email@email.com')    
      
 
         #delete from device
